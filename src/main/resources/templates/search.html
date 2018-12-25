@@ -35,9 +35,15 @@
     </form>
 
     <hr />
-
-    <!-- TODO #2 - Loop over jobs map to display all job fields -->
-    <li th:each="job : ${jobs}" th:text="${job}"></li>-->
+</div>
+<div>
+    <table th:each="job : ${jobs}" th:class="job-listing">
+      <tr th:each="jobEntry : ${job}" >
+        <td th:each="jE : ${jobEntry}" th:text="${jE.key}" />
+          <td th:each="jE : ${jobEntry}" th:text="${jE.value}" />
+    </tr>
+    </table><!-- TODO #2 - Loop over jobs map to display all job fields
+    name,employer,location,position type,core competency-->
     <li th:text="${title}"></li>
     <li th:text="${searchType}"></li>
     <li th:text="${searchTerm}"></li>

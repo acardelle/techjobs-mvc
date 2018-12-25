@@ -32,7 +32,7 @@ public class SearchController {
         model.addAttribute("title", nope);
         return "search";
     }
-
+    // TODO #1 - Create handler to process search request and display results - DONE!
     @RequestMapping(value = "results", method = RequestMethod.POST)
     public String processSearchRequest(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
@@ -44,6 +44,6 @@ public class SearchController {
         return "search";
     }
 
-    // TODO #1 - Create handler to process search request and display results
+
 
 }
