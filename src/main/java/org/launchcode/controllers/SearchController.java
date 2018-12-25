@@ -36,9 +36,9 @@ public class SearchController {
     @RequestMapping(value = "results", method = RequestMethod.POST)
     public String processSearchRequest(Model model, @RequestParam String searchType, @RequestParam String searchTerm) {
 
-        ArrayList<HashMap<String, String>> newjobs = JobData.findByColumnAndValue(searchType, searchTerm);
+        ArrayList<HashMap<String, String>> jobs = JobData.findByColumnAndValue(searchType, searchTerm);
         model.addAttribute("title", "Jobs with " + ListController.columnChoices.get(searchType) + ": " + searchTerm);
-        model.addAttribute("jobs", newjobs);
+        model.addAttribute("jobs", jobs);
         model.addAttribute("searchType", searchType);
         model.addAttribute("searchTerm", searchTerm);
         return "search";
